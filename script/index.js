@@ -85,7 +85,7 @@ productarr.forEach(function(el){
     btn.style.color="white"
 
     // btn.setAttribute("addtocart")
-    btn.addEventListener("click",function(el){
+    btn.addEventListener("click",function(){
         addtocart(el)
 
     })
@@ -174,6 +174,12 @@ pro.addEventListener("click",function(){
 })
 function profilefn(){
   window.Location="./login.html"
+}
+
+let product=JSON.parse(localStorage.getItem("data"))||[]
+function addtocart(el){
+  product.push(el)
+  localStorage.setItem("data",JSON.stringify(product))
 }
 
 
